@@ -2,7 +2,9 @@ $(document).ready(function() {
   window.dancers = [];
 
 
-  $('.zero').on('click', window.subZero); 
+  $('.zero').on('click', function (){
+    new subZero(37, 38, 39, 40, 93);
+  }); 
 
     // $("a").empty();
     // $('body').css('background-image', 'url(projectzero/back.png)');

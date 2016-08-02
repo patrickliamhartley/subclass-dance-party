@@ -1,22 +1,31 @@
 // Creates and returns a new dancer object that can step
-var subZero = function(left, up, right, down, atk) {
+var subZero = function(left, up, right, down, atk, char) {
   this.l = left;
   this.u = up;
   this.r = right;
   this.d = down;
   this.ak = atk;
-  var subZero = '<img id="sub" src=projectzero/standing.gif>'; 
-  $("a").empty();
-  $('body').css('background-image', 'url(projectzero/back.png)');
-  $('body').append(subZero);
-  var title = '<img id="fight" src=projectzero/fight.gif>';
-  $('body').append(title);
-  $('#fight').fadeOut(1400);
+  this.charName = char;
+  this.standingGif = 'projectzero/standing.gif';
+  this.walkingGif = 'projectzero/walking.gif';
+  this.attackingGif = 'projectzero/attacking.gif';
+  this.charObj = '<img id=' + this.charName + ' src=' + this.standingGif + '>';
+  // this.newGame = this.newGame.bind(this);
+  // this.newGame();
+
+  // char = '<img id="sub" src=projectzero/standing.gif>'; 
+  // $("a").empty();
+  // $('body').css('background-image', 'url(projectzero/back.png)');
+  $('body').append(this.charObj);
+  // var title = '<img id="fight" src=projectzero/fight.gif>';
+  // $('body').append(title);
+  // $('#fight').fadeOut(1400);
 
   this.standing = false;
   this.attacking = false;
   var moveD = this.movesDown.bind(this);
   var moveU = this.moveUp.bind(this);
+
   
 
   $(document).keydown(function (event) {
@@ -35,21 +44,38 @@ var subZero = function(left, up, right, down, atk) {
 
 };
 
+// subZero.prototype.newGame = function () {
+//   $("a").empty();
+//   $('body').css('background-image', 'url(projectzero/back.png)');
+//   var title = '<img id="fight" src=projectzero/fight.gif>';
+//   $('body').append(title);
+//   $('#fight').fadeOut(1400);
+
+// };
+
+subZero.prototype.newPlayer = function () {
+  new playerTwo(65, 87, 68, 83, 91, "pTwo");
+};
+
+subZero.prototype.setPlayer = function () {
+  $('#' + this.charName + '').attr("src", this.standingGif);
+};
+
   //to set standing and walking gifs
 subZero.prototype.standF = function () {
   if (this.standing === true) {
-    $('#sub').attr("src", 'projectzero/walking.gif');
+    $('#' + this.charName + '').attr("src", this.walkingGif);
   } else {
-    $('#sub').attr("src", 'projectzero/standing.gif');
+    $('#' + this.charName + '').attr("src", this.standingGif);
   }
 };
 
   //attack function
 subZero.prototype.attack = function() {
   if (this.attacking === true) {
-    $('#sub').attr("src",'projectzero/sAttack.gif');
+    $('#' + this.charName + '').attr("src",this.attackingGif);
   } else {
-    $('#sub').attr("src",'projectzero/standing.gif');
+    $('#' + this.charName + '').attr("src",this.standingGif);
   }
 
 };
@@ -66,22 +92,22 @@ subZero.prototype.attack = function() {
 subZero.prototype.movesDown = function(evt) {
 //directional movement
   if (evt.keyCode === this.d) {     
-    $('#sub').css({position:'relative','top':"+=10px"});
+    $('#' + this.charName + '').css({position:'relative','top':"+=10px"});
     this.standing = true;
     this.standF();
   }
   if (evt.keyCode === this.u) {     
-    $('#sub').css({position:'relative','top':"-=10px"});
+    $('#' + this.charName + '').css({position:'relative','top':"-=10px"});
     this.standing = true;
     this.standF();
   }
   if (evt.keyCode === this.r) {     
-    $('#sub').css({position:'relative','right':"-=10px"});
+    $('#' + this.charName + '').css({position:'relative','right':"-=10px"});
     this.standing = true;
     this.standF();
   }
   if (evt.keyCode === this.l) {     
-    $('#sub').css({position:'relative','right':"+=10px"});
+    $('#' + this.charName+ '').css({position:'relative','right':"+=10px"});
     this.standing = true;
     this.standF();
   }
@@ -90,6 +116,11 @@ subZero.prototype.movesDown = function(evt) {
     this.attacking = true;
     this.attack();
   }
+  //new player
+  if (evt.keyCode === 50) {     
+    this.newPlayer();
+  }
+
 };    
 
 // subZero.prototype.listenUp = function () {

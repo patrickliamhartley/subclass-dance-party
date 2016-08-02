@@ -32,12 +32,18 @@ body, a:link, a:visited, a:active{
 }
 #sub{
   height: 600px;
-  margin:100px 100px 50px 30px;
+  margin:100px -500px 50px 30px;
+  float: left;
 }
 #fight{
   position: fixed;
-  top; 10; 
-  height: 200px;
-  margin: 0 0 500px 0;
+  height: 400px;
+  margin: 0 300px 500px 300px;
+}
+#pTwo{
+  height: 600px;
+  margin:100px 30px 50px 100px;
+  float: right;
+
 }
 

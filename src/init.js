@@ -2,8 +2,13 @@ $(document).ready(function() {
   window.dancers = [];
 
 
-  $('.zero').on('click', function (){
-    new subZero(37, 38, 39, 40, 93);
+  $('.zero').on('click', function () {
+    new subZero(37, 38, 39, 40, 93, "sub");
+    $("a").empty();
+    $('body').css('background-image', 'url(projectzero/back.png)');
+    var title = '<img id="fight" src=projectzero/fight.gif>';
+    $('body').append(title);
+    $('#fight').fadeOut(1400);
   }); 
 
     // $("a").empty();

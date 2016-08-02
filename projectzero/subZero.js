@@ -15,17 +15,29 @@ var subZero = function(left, up, right, down, atk) {
 
   this.standing = false;
   this.attacking = false;
-  $(document).keydown(this.movesDown(evt));
-  console.log(evt.keyCode);
-  $(document).keyup(this.moveUp(e)); 
+  var moveD = this.movesDown.bind(this);
+  var moveU = this.moveUp.bind(this);
+  
+
+  $(document).keydown(function (event) {
+    moveD(event);
+    console.log(event.keyCode);
+  });
+  $(document).keyup(function (event) {
+    console.log(event.keyCode);
+    moveU(event);
+  });
+  
+  // this.listenDown();
+  // this.listenUp();
   //keyup to turn off walking animations
-  console.log(e.keyCode);
+
 
 };
 
   //to set standing and walking gifs
 subZero.prototype.standF = function () {
-  if (standing === true) {
+  if (this.standing === true) {
     $('#sub').attr("src", 'projectzero/walking.gif');
   } else {
     $('#sub').attr("src", 'projectzero/standing.gif');
@@ -34,7 +46,7 @@ subZero.prototype.standF = function () {
 
   //attack function
 subZero.prototype.attack = function() {
-  if (attacking === true) {
+  if (this.attacking === true) {
     $('#sub').attr("src",'projectzero/sAttack.gif');
   } else {
     $('#sub').attr("src",'projectzero/standing.gif');
@@ -43,8 +55,12 @@ subZero.prototype.attack = function() {
 };
   
 // subZero.prototype.listenDown = function() {
-//   $(document).keydown(this.movesDown(evt));
-//   console.log(evt.keyCode);
+//   $(document).keydown(function (evt) {
+//     var et = evt;
+//     subZero.prototype.movesDown(et);
+//     console.log(et.keyCode);
+//   });
+  
 // };
     
 subZero.prototype.movesDown = function(evt) {
@@ -77,9 +93,12 @@ subZero.prototype.movesDown = function(evt) {
 };    
 
 // subZero.prototype.listenUp = function () {
-//   $(document).keyup(this.moveUp(e)); 
-//   //keyup to turn off walking animations
-//   console.log(e.keyCode);
+//   $(document).keyup(function(e) {
+//     var et = e;
+//     subZero.prototype.moveUp(et); 
+//     console.log(e.keyCode);
+//   });
+//   //keyup to turn off walking animation
 // };
 
 subZero.prototype.moveUp = function(e) {

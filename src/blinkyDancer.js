@@ -1,6 +1,7 @@
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   //get inheritance from makeDancer
   makeDancer.call(this, top, left, timeBetweenSteps);
+
   
 };
 

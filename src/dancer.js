@@ -11,6 +11,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.setPosition(this.top, this.left);
   //initates step function to start repeating
   this.step();
+  
 };
 
 //step function binds to makeDancer 

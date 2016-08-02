@@ -1,6 +1,24 @@
 $(document).ready(function() {
   window.dancers = [];
 
+
+  $('.zero').on('click', window.subZero); 
+
+    // $("a").empty();
+    // $('body').css('background-image', 'url(projectzero/back.png)');
+    // $('body').append('<img class="sub" src=projectzero/standing.gif>');
+    // $(document).keyup(function(evt) {
+    //   if (evt.keyCode == 32) {
+    //   $(".sub").remove();
+    //   $('body').append('<img class="sub" src=projectzero/walking.gif>');
+
+    //   }
+    // });
+  
+
+  
+
+
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.

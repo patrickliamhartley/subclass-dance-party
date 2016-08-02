@@ -1,9 +1,9 @@
 body, html{
-  height:100%;
+  height:40%;
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-size: 100% auto;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -25,3 +25,13 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+#back{
+  size:1000px ;
+  background-image: url("projectzero/back.png");
+  background-color: #cccccc;
+}
+.sub{
+  height: 600px;
+  margin:100px,100px,0,100px;
+}
+

@@ -37,7 +37,7 @@ body, a:link, a:visited, a:active{
 #fight{
   position: fixed;
   top; 10; 
-  height: 200px;
-  margin: 0 0 500px 0;
+  height: 400px;
+  margin: 0 0 500px -100px;
 }
 

@@ -4,11 +4,21 @@ $(document).ready(function() {
 
   $('.zero').on('click', function () {
     new subZero(37, 38, 39, 40, 93, "sub");
-    $("a").empty();
+    $('a').empty();
+    $('span').remove();    
+
+    $(".topbar").css({display: 'none'});
+    $("span").css({display: 'none'});
     $('body').css('background-image', 'url(projectzero/back.png)');
     var title = '<img id="fight" src=projectzero/fight.gif>';
     $('body').append(title);
     $('#fight').fadeOut(1400);
+    var start = '<img class="start" src=projectzero/start.gif>';
+    var two = '<img id= "two" class="start" src=projectzero/pl2.gif>';
+    
+    $('body').append(two);
+    $('body').append(start);
+
   }); 
 
     // $("a").empty();

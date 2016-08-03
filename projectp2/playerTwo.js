@@ -4,6 +4,7 @@ var playerTwo = function (top, left, up, right, down, atk, char) {
   this.walkingGif = 'projectp2/walking.gif';
   this.attackingGif = 'projectp2/attacking.gif';
   this.setPlayer();
+  $(".start").css({display: 'none'});
 
   // this.newGame = this.newGame.bind(this);
   

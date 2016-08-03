@@ -5,6 +5,7 @@ body{
   margin: 0px;
   background-size: 100% auto;
   font-size: 18px;
+  background-color: #4d4d4d;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -32,7 +33,7 @@ body, a:link, a:visited, a:active{
 }
 #sub{
   height: 600px;
-  margin:100px -500px 50px 30px;
+  margin:150px -500px 50px 30px;
   float: left;
 }
 #fight{
@@ -42,8 +43,27 @@ body, a:link, a:visited, a:active{
 }
 #pTwo{
   height: 600px;
-  margin:100px 30px 50px 100px;
+  margin:150px 30px 50px 100px;
   float: right;
 
 }
+#two {
+  height: 40px;
+  margin: 50px 10px 10px 10px;
+  /*position: fixed;*/
+  top: 200px;
+  right: 50px;
+}
+.start{
+  position: absolute;
+  height: 20px;
+  
+  margin: 100px 30px 40px 50px;  
+  right: 15px;
+  top: 200px;
+}
+
+/*  top: -100px;*/
+
+
 

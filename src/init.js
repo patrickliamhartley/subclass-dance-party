@@ -18,6 +18,8 @@ $(document).ready(function() {
     
     $('body').append(two);
     $('body').append(start);
+    var audio = document.getElementsByTagName("audio")[0];
+    audio.play;
 
   }); 
 
